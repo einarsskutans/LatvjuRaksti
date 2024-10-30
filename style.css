@@ -1,0 +1,74 @@
+html {
+    background-color: #FFFFFF;
+}
+
+
+
+/* Cards */
+.divtable {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid
+}
+
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    max-width: 30vmax;
+    min-width: 270px;
+    margin: 16px;
+
+    background-color: #9E3039;
+}
+.category h3 {
+    color: #FFFFFF;
+    text-align: center;
+    grid-column: 1/4;
+}
+
+.cardzime {
+    display: flex;
+    flex-direction: column;
+
+    margin: 8%;
+
+    /* Colors */
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0px 8px 8px #7E262D;
+}
+.cardzime p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+.cardzime img {
+    width: 100%;
+    grid-row: 2;
+}
+
+/* Navigation*/
+nav ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #9E3039;
+}
+nav li {
+    display: inline;
+    text-align: center;
+    float: left;
+}
+nav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    border-right: #75232a 1px solid;
+}
+nav li:hover {
+    background-color: #75232a;
+}
