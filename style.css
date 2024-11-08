@@ -6,32 +6,39 @@ html {
 
 /* Cards */
 .divtable {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+
     border: 1px solid
 }
 
+.categorylist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 .category {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-    max-width: 30vmax;
-    min-width: 270px;
-    margin: 16px;
-
+    display: flex;
+    flex-direction: column;
     background-color: #9E3039;
+    margin: 1vmax;
 }
 .category h3 {
     color: #FFFFFF;
     text-align: center;
     grid-column: 1/4;
+    text-align: left;
+    margin: 4vmax;
 }
 
 .cardzime {
     display: flex;
     flex-direction: column;
 
-    margin: 8%;
+    width: 15vmax;
+    max-width: 256px;
+    margin: 1vmax;
 
     /* Colors */
     background-color: #FFFFFF;
