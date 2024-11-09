@@ -56,4 +56,9 @@ function insertCard() {
     symbolsGenerated = true
 }
 
+function insertCardDescription() {
+    let parent = document.getElementsByClassName("cardzime")
+    parent.innerHTML += '<h1>TEST</h1>'
+}
+
 document.addEventListener("DOMContentLoaded", insertCard)

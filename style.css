@@ -43,7 +43,10 @@ html {
     /* Colors */
     background-color: #FFFFFF;
     border-radius: 16px;
-    box-shadow: 0px 8px 8px #7E262D;
+    box-shadow: 0px 12px 12px #7E262D;
+}
+.cardzime:hover {
+    
 }
 .cardzime p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
