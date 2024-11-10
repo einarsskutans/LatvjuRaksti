@@ -2,13 +2,13 @@
 <html lang="en-US">
     <head>
         <meta charset="utf-8" />
-        <title>Latvju raksti</title>
+        <title>Latvju zīmes</title>
         <meta name="Author" content="Einars">
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>Latvju raksti</h1>
+            <h1>Latvju zīmes</h1>
             <nav>
                 <ul>
                     <li><a href="" id="currentpage">Latvju raksti</a></li>
@@ -20,24 +20,19 @@
             <hr>
         </header>
         <main> <!-- Latvju raksti -->
+            <button class="cardfilter" onclick="setSelection(-1)">Visas zīmes</button>
+            <button class="cardfilter" onclick="setSelection(0)">Debešu zīmes</button>
+            <button class="cardfilter" onclick="setSelection(1)">Gadskārtu zīmes</button>
+            <button class="cardfilter" onclick="setSelection(2)">Dievību zīmes</button>
+            <button class="cardfilter" onclick="setSelection(3)">Citas zīmes</button>
+
             <section class="divtable">
-                <section class="category" onmouseover="insertCardDescription()">
-                    <h3>Debešu zīmes</h3>
-                    <div class="categorylist"></div>
-                </section>
-                <section class="category" onmouseover="insertCardDescription()">
-                    <h3>Gadskārtu zīmes</h3>
-                    <div class="categorylist"></div>
-                </section>
-                <section class="category" onmouseover="insertCardDescription()">
-                    <h3>Dievību zīmes</h3>
-                    <div class="categorylist"></div>
-                </section>
+                
             </section>
             <hr>
         </main>
         <footer>
-            <p>Autors: Einārs</p>
+            <p>Autors: Einārs Škutāns</p>
             <hr>
         </footer>
     <script src="main.js"></script>

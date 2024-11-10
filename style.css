@@ -1,5 +1,6 @@
 html {
     background-color: #FFFFFF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -9,7 +10,7 @@ html {
     display: flex;
     flex-direction: column;
 
-    border: 1px solid
+    /*border: 1px solid*/
 }
 
 .categorylist {
@@ -24,12 +25,16 @@ html {
     background-color: #9E3039;
     margin: 1vmax;
 }
-.category h3 {
+.h3bar h3 {
     color: #FFFFFF;
     text-align: center;
+    font-size: 1.9rem;
     grid-column: 1/4;
     text-align: left;
-    margin: 4vmax;
+    margin: 2vmax;
+}
+.h3bar {
+    background-color: #51181D;
 }
 
 .cardzime {
@@ -45,9 +50,6 @@ html {
     border-radius: 16px;
     box-shadow: 0px 12px 12px #7E262D;
 }
-.cardzime:hover {
-    
-}
 .cardzime p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 100%;
@@ -57,6 +59,20 @@ html {
 .cardzime img {
     width: 100%;
     grid-row: 2;
+    border-bottom: 1px dotted;
+}
+
+/* Card buttons (filters) */
+.cardfilter {
+    text-decoration: none;
+    background-color: #75232a;
+    color: #FFFFFF;
+    padding: 8px;
+    border: none;
+    margin-left: 1vmax;
+}
+.cardfilter:active {
+    background-color: #51181D;
 }
 
 /* Navigation*/
