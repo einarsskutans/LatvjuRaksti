@@ -5,7 +5,7 @@ html {
 
 
 
-/* Cards */
+/* Cards (symbol list)*/
 .divtable {
     display: flex;
     flex-direction: column;
@@ -62,7 +62,7 @@ html {
     border-bottom: 1px dotted;
 }
 
-/* Card buttons (filters) */
+/* Card list buttons (filters) */
 .cardfilter {
     text-decoration: none;
     background-color: #75232a;
@@ -97,4 +97,24 @@ nav a {
 }
 nav li:hover {
     background-color: #75232a;
+}
+
+/* Flashcard */
+.flashcardcategory {
+    padding: 5vmax;
+    padding-bottom: 15vmax;
+}
+.flashcard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 0;
+
+    background-color: #FFFFFF;
+}
+.flashcard img {
+    border: solid 1px;
+}
+.flashcard h3 {
+    margin: auto;
 }
