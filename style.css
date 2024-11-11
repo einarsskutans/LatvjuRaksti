@@ -126,5 +126,14 @@ nav li:hover {
 }
 .flashcardbuttons {
     text-align: center;
-    
+}
+.flashcardbuttons button {
+    margin-top: 16px;
+    margin: 16px;
+
+    width: 56px;
+    height: 56px;
+
+    border-radius: 100%;
+    border: solid 2px;
 }
