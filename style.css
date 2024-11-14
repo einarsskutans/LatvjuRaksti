@@ -3,8 +3,6 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
 /* Cards (symbol list)*/
 .divtable {
     display: flex;
@@ -22,16 +20,20 @@ html {
 .category {
     display: flex;
     flex-direction: column;
-    background-color: #9E3039;
+
     margin: 1vmax;
+
+    background-color: #9E3039;
 }
 .h3bar h3 {
+    grid-column: 1/4;
+
+    margin: 2vmax;
+
     color: #FFFFFF;
     text-align: center;
     font-size: 1.9rem;
-    grid-column: 1/4;
     text-align: left;
-    margin: 2vmax;
 }
 .h3bar {
     background-color: #51181D;
@@ -45,7 +47,6 @@ html {
     max-width: 256px;
     margin: 1vmax;
 
-    /* Colors */
     background-color: #FFFFFF;
     border-radius: 16px;
     box-shadow: 0px 12px 12px #7E262D;
@@ -64,12 +65,13 @@ html {
 
 /* Card list buttons (filters) */
 .cardfilter {
+    margin-left: 1vmax;
+    padding: 8px;
+
     text-decoration: none;
     background-color: #75232a;
     color: #FFFFFF;
-    padding: 8px;
     border: none;
-    margin-left: 1vmax;
 }
 .cardfilter:active {
     background-color: #51181D;
@@ -90,9 +92,11 @@ nav li {
 }
 nav a {
     display: block;
+    
+    padding: 16px;
+
     text-decoration: none;
     color: white;
-    padding: 16px;
     border-right: #75232a 1px solid;
 }
 nav li:hover {
@@ -108,9 +112,9 @@ nav li:hover {
     display: flex;
     flex-direction: row;
     align-items: center;    
+
     margin: auto;
-    
-    min-width: 720px;
+    min-width: 180px;
 
     border-radius: 16px;
     background-color: #FFFFFF;
