@@ -123,7 +123,7 @@ nav li:hover {
 .flashcard img {
     width: 50%;
 
-    border: solid 1px;
+    border-right: solid 1px;
 }
 .flashcard h3 {
     margin: auto;
@@ -138,6 +138,6 @@ nav li:hover {
     width: 56px;
     height: 56px;
 
-    border-radius: 100%;
+    
     border: solid 2px;
 }

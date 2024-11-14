@@ -1,5 +1,5 @@
 
-const symbolList = [
+var SYMBOLLIST = [
     ["Pasaules audums", "Tīklveida režģis simbolizē pasaules vienotību, sadarbību, salīdzinot to ar bišu šūnām (1, 15-16).", "pasaulesaudums.svg", 3],
     ["Dievs", "Simbolizē aizsardzību, svētību, uzraudzību, aizstāvību. Tiek salīdzināts ar jumtu (1, 21).", "dievs.svg", 1],
     ["Taisnais krusts", "Nāves vai kristietības simbols. Simbolizē īslaicīgo nomiršanu un nekustīgo, arī kosmosu un pasaules centru (1, 24).", "taisnaiskrusts.svg", 3],
@@ -49,7 +49,7 @@ let symbolCategoryList = [[], [], [], []]
 
 function initializeSymbols() {
     symbolCategoryList = [[], [], [], []]
-    for (list of symbolList) {
+    for (list of SYMBOLLIST) {
         symbolCategoryList[list[3]].push(list)
     }
     console.log(symbolCategoryList)
@@ -86,7 +86,7 @@ function generateSymbols() {
         } 
     }
     if (symbolsSelected === -1) {
-        for (list of symbolList) {
+        for (list of SYMBOLLIST) {
             parent.innerHTML += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[2] +'"><p>' + list[0] + '</p></div>'
         }
     }
