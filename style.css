@@ -21,8 +21,6 @@ html {
     display: flex;
     flex-direction: column;
 
-    margin: 1vmax;
-
     background-color: #9E3039;
 }
 .h3bar h3 {
@@ -105,16 +103,13 @@ nav li:hover {
 
 /* Flashcard */
 .flashcardcategory {
-    padding: 5vmax;
-    padding-bottom: 15vmax;
+    align-items: center;
+    margin: 0;
 }
 .flashcard {
     display: flex;
     flex-direction: row;
-    align-items: center;    
-
-    margin: auto;
-    min-width: 180px;
+    align-items: center;
 
     border-radius: 16px;
     background-color: #FFFFFF;
