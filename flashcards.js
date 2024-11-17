@@ -41,55 +41,39 @@ var SYMBOLLIST = [
     ["Zvaigznes zīme", "dieva un pasaules", 0, "Simbolizē aizsardzību. Kristietībā – tikumība, bruņnieciskums, pieklājība, Dieva godāšana (1, 103).", "zvaigzneszime.svg"]
 ]
 
-// index.html -> Loading symbols
-let symbolsGenerated = false
-let symbolsSelected = -1 // Default", load all symbols
-let symbolCategoryList = [[], [], [], []]
-
-function initializeSymbols() {
-    symbolCategoryList = [[], [], [], []]
+// macies.html -> Flashcard functionality
+let shuffledList = []
+let dynamicList = []
+let currentCard
+let currentCardIndex = 0
+let img = document.getElementsByTagName("img")[0]
+function generateSymbolList() {
     for (list of SYMBOLLIST) {
-        symbolCategoryList[list[2]].push(list)
+        shuffledList.push(list)
     }
-    console.log(symbolCategoryList)
-    generateSymbols()
+    dynamicList = shuffledList
+    currentCard = dynamicList[currentCardIndex]
+    updateCard()
 }
-function generateSymbols() {
-    let divtable = document.getElementsByClassName("divtable")[0]
-    divtable.innerHTML = ''
-    switch (symbolsSelected) {
-        case -1:
-            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Visas zīmes</h3></div><div class="categorylist"></div></section>'
-            break
-        case 0:
-            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Dieva un pasaules zīmes</h3></div><div class="categorylist"></div></section>'
-            break
-        case 1:
-            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Laika un likteņa zīmes</h3></div><div class="categorylist"></div></section>'
-            break
-        case 2:
-            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Visums un laika viļņu cikla zīmes</h3></div><div class="categorylist"></div></section>'
-            break
-        case 3:
-            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Citas zīmes</h3></div><div class="categorylist"></div></section>'
-            break
-        default:
-            break
-    }
-    let parent = document.getElementsByClassName("categorylist")[0]
-    if (symbolsSelected !== -1) {
-        for (list of symbolCategoryList[symbolsSelected]) {
-            parent.innerHTML += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
-        } 
-    }
-    if (symbolsSelected === -1) {
-        for (list of SYMBOLLIST) {
-            parent.innerHTML += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
-        }
-    }
+function updateCard() {
+    currentCard = shuffledList[currentCardIndex]
+    img.setAttribute("src", "LatvjuZimesAssets/" + currentCard[4])
+    console.log(currentCard)
 }
-function setSelection(symbol) {
-    symbolsSelected = symbol
-    generateSymbols()
+function nextFlashcard() {
+    if (currentCardIndex < shuffledList.length-1) {
+        currentCardIndex++
+    }
+    updateCard()
 }
-document.addEventListener("DOMContentLoaded", initializeSymbols)
+function previousFlashcard() {
+    if (currentCardIndex > 0) {
+        currentCardIndex--
+    }
+    updateCard()
+}
+function turnFlashcard() {
+    console.log(currentCard[3])
+}
+
+document.addEventListener("DOMContentLoaded", generateSymbolList)
