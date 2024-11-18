@@ -47,6 +47,8 @@ let dynamicList = []
 let currentCard
 let currentCardIndex = 0
 let img = document.getElementsByTagName("img")[0]
+let h3 = document.getElementsByTagName("h3")[1]
+let cardFlipped = false
 function generateSymbolList() {
     for (list of SYMBOLLIST) {
         shuffledList.push(list)
@@ -58,6 +60,10 @@ function generateSymbolList() {
 function updateCard() {
     currentCard = shuffledList[currentCardIndex]
     img.setAttribute("src", "LatvjuZimesAssets/" + currentCard[4])
+
+    h3.innerHTML = "?"
+    cardFlipped = false
+
     console.log(currentCard)
 }
 function nextFlashcard() {
@@ -73,7 +79,14 @@ function previousFlashcard() {
     updateCard()
 }
 function turnFlashcard() {
-    console.log(currentCard[3])
+    if (!cardFlipped) {
+        h3.innerHTML = currentCard[0]
+        cardFlipped = true
+    }
+    else if (cardFlipped) {
+        h3.innerHTML = "?"
+        cardFlipped = false
+    }
 }
 
 document.addEventListener("DOMContentLoaded", generateSymbolList)
