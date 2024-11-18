@@ -34,7 +34,7 @@ html {
     text-align: left;
 }
 .h3bar {
-    background-color: #51181D;
+    background: #51181D;
 }
 
 .cardzime {
@@ -131,14 +131,12 @@ nav li:hover {
 .flashcardbuttons button {
     margin-top: 16px;
     margin: 16px;
+    padding: 1vmax;
 
-    width: 56px;
-    height: 56px;
-
-    font-size: 2em;
+    font-size: 1em;
     text-align: center;
-    border-radius: 100%;
-    border: solid 2px #c5c5c5;
+    border-radius: 8px;
+    border: 2px #c5c5c5;
     box-shadow: 0 8px 8px #7E262D;
     background-color: #FFFFFF;
 }
