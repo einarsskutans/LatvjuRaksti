@@ -43,17 +43,21 @@ var SYMBOLLIST = [
 
 // index.html -> Loading symbols
 let symbolsGenerated = false
-let symbolsSelected = -1 // Default", load all symbols
+let symbolsSelected = 4 // Default, load all symbols
 let symbolCategoryList = [[], [], [], []]
-
 let symbolListHTML = ["", "", "", "", ""]
+
 function intializeSymbolsHTML() {
-    for (i in symbolListHTML) {
-        for (list in symbolCategoryList[i]) {
-            i += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
+    initializeSymbols()
+    for (let i = 0; i < 4; i++) { // Turn each category into an HTML string
+        for (list of symbolCategoryList[i]) {
+            symbolListHTML[i] += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
         }
     }
-    console.log(symbolListHTML[0])
+    for (list of SYMBOLLIST) { // Turn all symbols into an HTML string
+        symbolListHTML[4] += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
+    }
+    generateSymbols()
 }
 
 function initializeSymbols() {
@@ -61,45 +65,44 @@ function initializeSymbols() {
     for (list of SYMBOLLIST) {
         symbolCategoryList[list[2]].push(list)
     }
-    console.log(symbolCategoryList)
-    generateSymbols()
 }
 function generateSymbols() {
     let divtable = document.getElementsByClassName("divtable")[0]
+    let categorylist
     divtable.innerHTML = ''
+    
     switch (symbolsSelected) {
-        case -1:
+        case 4:
             divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Visas zīmes</h3></div><div class="categorylist"></div></section>'
+            categorylist = document.getElementsByClassName("categorylist")[0]
+            categorylist.innerHTML = symbolListHTML[4]
             break
         case 0:
             divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Dieva un pasaules zīmes</h3></div><div class="categorylist"></div></section>'
+            categorylist = document.getElementsByClassName("categorylist")[0]
+            categorylist.innerHTML = symbolListHTML[0]
             break
         case 1:
             divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Laika un likteņa zīmes</h3></div><div class="categorylist"></div></section>'
+            categorylist = document.getElementsByClassName("categorylist")[0]
+            categorylist.innerHTML = symbolListHTML[1]
             break
         case 2:
             divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Visums un laika viļņu cikla zīmes</h3></div><div class="categorylist"></div></section>'
+            categorylist = document.getElementsByClassName("categorylist")[0]
+            categorylist.innerHTML = symbolListHTML[2]
             break
         case 3:
             divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Citas zīmes</h3></div><div class="categorylist"></div></section>'
+            categorylist = document.getElementsByClassName("categorylist")[0]
+            categorylist.innerHTML = symbolListHTML[3]
             break
         default:
             break
-    }
-    let parent = document.getElementsByClassName("categorylist")[0]
-    if (symbolsSelected !== -1) {
-        for (list of symbolCategoryList[symbolsSelected]) {
-            parent.innerHTML += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
-        } 
-    }
-    if (symbolsSelected === -1) {
-        for (list of SYMBOLLIST) {
-            parent.innerHTML += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
-        }
     }
 }
 function setSelection(symbol) {
     symbolsSelected = symbol
     generateSymbols()
 }
-document.addEventListener("DOMContentLoaded", initializeSymbols)
+document.addEventListener("DOMContentLoaded", intializeSymbolsHTML)
