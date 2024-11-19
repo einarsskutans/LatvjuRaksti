@@ -46,6 +46,16 @@ let symbolsGenerated = false
 let symbolsSelected = -1 // Default", load all symbols
 let symbolCategoryList = [[], [], [], []]
 
+let symbolListHTML = ["", "", "", "", ""]
+function intializeSymbolsHTML() {
+    for (i in symbolListHTML) {
+        for (list in symbolCategoryList[i]) {
+            i += '<div class="cardzime"><img src="LatvjuZimesAssets/'+ list[4] +'"><p>' + list[0] + '</p></div>'
+        }
+    }
+    console.log(symbolListHTML[0])
+}
+
 function initializeSymbols() {
     symbolCategoryList = [[], [], [], []]
     for (list of SYMBOLLIST) {
