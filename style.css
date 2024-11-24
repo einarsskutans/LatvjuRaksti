@@ -40,10 +40,14 @@ html {
 .cardzime {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    width: 15vmax;
+    width: 20vmax;
     max-width: 256px;
     margin: 1vmax;
+    height: 25vmax;
+    max-height: 320px;
 
     background-color: #FFFFFF;
     border-radius: 16px;
@@ -59,6 +63,20 @@ html {
     width: 100%;
     grid-row: 2;
     border-bottom: 1px dotted;
+}
+
+.cardzimeinfo {
+    display: none;
+    margin: 1vmax;
+}
+.cardzime:hover .cardzimetitle {
+    display: none;
+}
+.cardzime:hover .cardzimeinfo {
+    display: block;
+}
+.cardzime:hover img {
+    display: none;
 }
 
 /* Card list buttons (filters) */

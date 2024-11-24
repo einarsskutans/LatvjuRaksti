@@ -8,7 +8,7 @@ var SYMBOLLIST = [
     ["Dievaine", "dieva un pasaules", 0, "Simbolizē robežsituāciju starp pasaulēm (1, 116).", "dievaine.svg"],
     ["Dievs", "dieva un pasaules", 0, "Simbolizē aizsardzību, svētību, uzraudzību, aizstāvību. Tiek salīdzināts ar jumtu (1, 21).", "dievs.svg"],
     ["Jāņa zīme", "dieva un pasaules", 0, "Attēlo 3 Saules, ko raksturo vasaras saulgrieži. Tās simbolizē ceļu, kas sākas Ziemassvētkos, gaismas kulmināciju – Jāņus un rudeni – tumsu (1, 92).", "janis.svg"],
-    ["Jumis", "dieva un pasaules", 0, "divdabīgs, simbolizē labklājību un auglību, bet arī nāvi un pabeigtību. Saistīta ar cikla posmiem un enerģiju (1, 65-66).", "jumis.svg"],
+    ["Jumis", "dieva un pasaules", 0, "Divdabīgs, simbolizē labklājību un auglību, bet arī nāvi un pabeigtību. Saistīta ar cikla posmiem un enerģiju (1, 65-66).", "jumis.svg"],
     ["Kāpnes", "visums un laika viļņa ciklu", 2, "Savieno elli, cilvēku pasauli un debesis. Simbolizē cilvēka mūžu un dvēseles ceļu (1, 117).", "kapnes.svg"],
     ["Krupītis", "dieva un pasaules", 0, "Simbolizē zemapziņu un intuīciju. Saistās ar neredzamo pasauli (1, 95).", "krupitis.svg"],
     ["Krusta zalktis", "laika un likteņa", 1, "Krusts raksturo dinamiskumu un kustību (1, 87).", "krustazalktis.svg"],
@@ -51,11 +51,11 @@ function intializeSymbolsHTML() {
     initializeSymbols()
     for (let i = 0; i < 4; i++) { // Turn each category into an HTML string
         for (list of symbolCategoryList[i]) {
-            symbolListHTML[i] += `<div class="cardzime"><img src="LatvjuZimesAssets/${list[4]}"><p>${list[0]}</p></div>`
+            symbolListHTML[i] += `<div class="cardzime"><img src="LatvjuZimesAssets/${list[4]}"><p class="cardzimetitle">${list[0]}</p><p class="cardzimeinfo">${list[3]}</p></div>`
         }
     }
     for (list of SYMBOLLIST) { // Turn all symbols into an HTML string
-        symbolListHTML[4] += `<div class="cardzime"><img src="LatvjuZimesAssets/${list[4]}"><p>${list[0]}</p><p style="display: none">${list[3]}</p></div>`
+        symbolListHTML[4] += `<div class="cardzime"><img src="LatvjuZimesAssets/${list[4]}"><p class="cardzimetitle">${list[0]}</p><p class="cardzimeinfo">${list[3]}</p></div>`
     }
     generateSymbols()
 }
