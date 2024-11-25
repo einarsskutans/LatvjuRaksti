@@ -121,10 +121,10 @@ nav li:hover {
 }
 
 /* Flashcard */
-.flashcardcategory {
+.flashcard-area {
     padding: 6vmax;
 }
-.flashcard {
+.flashcard-front {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -136,10 +136,10 @@ nav li:hover {
     background-color: #FFFFFF;
     box-shadow: 0px 12px 12px #7E262D;
 }
-.flashcard img {
+.flashcard-front img {
     width: 50%;
 }
-.flashcard h3 {
+.flashcard-front h3 {
     margin: auto;
     text-align: center;
     overflow: visible;
