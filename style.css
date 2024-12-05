@@ -121,8 +121,9 @@ nav li:hover {
 }
 
 /* Flashcard */
-.flashcard-area {
-    padding: 6vmax;
+.flashcardcategory {
+    margin: auto;
+    margin-top: 1vmax;
 }
 .flashcard-front {
     display: flex;
@@ -146,18 +147,25 @@ nav li:hover {
     width: 40%;
 }
 .flashcardbuttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
+    justify-items: center;
 }
 .flashcardbuttons button {
     margin-top: 16px;
     margin: 16px;
     padding: 1vmax;
+    
+    width: 24vmax;
+    height: 8vmax;
 
     font-size: 1em;
     text-align: center;
     border-radius: 8px;
     border: 2px #c5c5c5;
     box-shadow: 0 8px 8px #7E262D;
+    
     background-color: #FFFFFF;
 }
 button:active {

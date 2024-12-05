@@ -89,4 +89,11 @@ function turnFlashcard() {
     }
 }
 
+function checkRight(buttonid, answer) {
+    let button = document.getElementById(buttonid)
+    if (button.innerText === answer) {
+        console.log("Right answer")
+    }
+}
+
 document.addEventListener("DOMContentLoaded", generateSymbolList)
