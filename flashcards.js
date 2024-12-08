@@ -101,7 +101,7 @@ function generateAnswers() {
     let randomanswers = []
     let randindex
     randomanswers.push(answer) // Right answer always goes first
-    for (let i = 1; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
