@@ -3,7 +3,7 @@ var SYMBOLLIST = [
     ["Apcirptais krusts", "citas", 3, "Simbolizē apturētu kustību, beigas (2, 135).", "apcirptaiskrusts.svg"],
     ["Apgrieztais Jumis", "citas", 3, "Simbolizē nāvi, postošo spēku. Pretējs Jumim (2, 134).", "apgrieztaisjumis.svg"],
     ["Astoņnītis", "visums un laika viļņa ciklu	", 2, "Simbolizē bezgalību, laika ciklus (2, 112). Veidots no zalkša zīmēm, līkločiem (1, 220).", "astonitis.svg"],
-    ["Auseklis", "dieva un pasaules	", 0, "Simbolizē Gaismas koku un gaismas uzvaru cīņā pret tumsu (2, 47).", "auseklis.svg	"],
+    ["Auseklis", "dieva un pasaules	", 0, "Simbolizē Gaismas koku un gaismas uzvaru cīņā pret tumsu (2, 47).", "auseklis.svg"],
     ["Austras koks", "dieva un pasaules", 0, "Saknes simbolizē pagātni - pazemi, stumbrs tagadni - cilvēkus, lapotne nākotni – debesis (2, 30).", "austraskoks.svg"],
     ["Dievaine", "dieva un pasaules", 0, "Simbolizē robežsituāciju starp pasaulēm (2, 116).	", "dievaine.svg"],
     ["Dievs", "dieva un pasaules", 0, "Simbolizē aizsardzību, svētību, uzraudzību, aizstāvību. Tiek salīdzināts ar jumtu (2, 21).", "dievs.svg"],

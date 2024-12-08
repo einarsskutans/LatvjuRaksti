@@ -149,6 +149,7 @@ nav li:hover {
 .flashcardbuttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 1vmax;
     text-align: center;
     justify-items: center;
 }
@@ -157,8 +158,8 @@ nav li:hover {
     margin: 16px;
     padding: 1vmax;
     
-    width: 24vmax;
-    height: 8vmax;
+    width: 100%;
+    height:80%;
 
     font-size: 1em;
     text-align: center;
