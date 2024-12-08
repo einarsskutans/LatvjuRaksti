@@ -47,7 +47,6 @@ let dynamicList = []
 let currentCard
 let currentCardIndex = 0
 let img = document.getElementsByTagName("img")[0]
-let h3 = document.getElementsByTagName("h3")[1]
 let cardFlipped = false
 let answer
 function generateSymbolList() {
@@ -62,13 +61,12 @@ function updateCard() {
     currentCard = shuffledList[currentCardIndex]
     img.setAttribute("src", "LatvjuZimesAssets/" + currentCard[4])
 
-    h3.innerHTML = "?"
     cardFlipped = false
+    generateAnswers()
 
     console.log(currentCard)
 }
 function nextFlashcard() {
-    generateAnswers()
     if (currentCardIndex < shuffledList.length-1) {
         currentCardIndex++
     }
@@ -82,11 +80,9 @@ function previousFlashcard() {
 }
 function turnFlashcard() {
     if (!cardFlipped) {
-        h3.innerHTML = currentCard[0]
         cardFlipped = true
     }
     else if (cardFlipped) {
-        h3.innerHTML = "?"
         cardFlipped = false
     }
 }
@@ -103,17 +99,19 @@ function generateAnswers() {
     let answerbuttons = document.getElementsByClassName("answerbuttons")
     let randomanswers = []
     let randindex
-    for (let i = 0; i < 3; i++) {
+    randomanswers.push(answer) // Right answer always goes first
+    for (let i = 1; i < 4; i++) {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
-    randomanswers.push(answer)
+    randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
+    randomanswers[0] = randomanswers[randindex]
+    randomanswers[randindex] = answer
 
-    let i = 0
-    for (button of answerbuttons) {
-        button.innerText = randomanswers[i]
-        i++
-    }
+    answerbuttons[0].innerText = randomanswers[0]
+    answerbuttons[1].innerText = randomanswers[1]
+    answerbuttons[2].innerText = randomanswers[2]
+    answerbuttons[3].innerText = randomanswers[3]
 }
 
 document.addEventListener("DOMContentLoaded", generateSymbolList)
