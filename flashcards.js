@@ -49,6 +49,7 @@ let currentCardIndex = 0
 let img = document.getElementsByTagName("img")[0]
 let h3 = document.getElementsByTagName("h3")[1]
 let cardFlipped = false
+let answer
 function generateSymbolList() {
     for (list of SYMBOLLIST) {
         shuffledList.push(list)
@@ -67,6 +68,7 @@ function updateCard() {
     console.log(currentCard)
 }
 function nextFlashcard() {
+    generateAnswers()
     if (currentCardIndex < shuffledList.length-1) {
         currentCardIndex++
     }
@@ -89,11 +91,30 @@ function turnFlashcard() {
     }
 }
 
-function checkRight(buttonid, answer) {
+function checkRight(buttonid) {
     let button = document.getElementById(buttonid)
     if (button.innerText === answer) {
         console.log("Right answer")
+        nextFlashcard()
+    }
+}
+function generateAnswers() {
+    answer = currentCard[0]
+    let answerbuttons = document.getElementsByClassName("answerbuttons")
+    let randomanswers = []
+    let randindex
+    for (let i = 0; i < 3; i++) {
+        randindex = Math.floor(Math.random() * SYMBOLLIST.length)
+        randomanswers.push(SYMBOLLIST[randindex][0])
+    }
+    randomanswers.push(answer)
+
+    let i = 0
+    for (button of answerbuttons) {
+        button.innerText = randomanswers[i]
+        i++
     }
 }
 
 document.addEventListener("DOMContentLoaded", generateSymbolList)
+document.addEventListener("DOMContentLoaded", generateAnswers)
