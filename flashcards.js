@@ -89,6 +89,7 @@ function turnFlashcard() {
 
 function checkRight(buttonid) {
     let button = document.getElementById(buttonid)
+
     if (button.innerText === answer) {
         console.log("Right answer")
         nextFlashcard()
