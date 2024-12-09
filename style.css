@@ -3,7 +3,7 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 600px) {
     /* Cards (symbol list)*/
     .divtable {
         display: flex;
@@ -174,7 +174,7 @@ html {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 590px) {
     .flashcardcategory {
         flex-direction: column;
     }
