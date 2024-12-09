@@ -127,8 +127,6 @@ nav li:hover {
 
     margin: auto;
     margin-top: 1vmax;
-
-    border: solid 1px black;
 }
 .flashcard-front {
     display: flex;
@@ -148,8 +146,6 @@ nav li:hover {
 .flashcardbuttons {
     display: flex;
     flex-direction: column;
-
-    border: solid 1px black;
 
     min-width: 340px;
     max-width: 360px;
@@ -183,5 +179,13 @@ button:active {
     .flashcardbuttons button {
         margin: 0;
         margin-top: 8px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    nav a {
+        border-bottom: #75232a 1px solid;
     }
 }
