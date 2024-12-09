@@ -3,178 +3,176 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@media screen and (min-width: 600px) {
-    /* Cards (symbol list)*/
-    .divtable {
-        display: flex;
-        flex-direction: column;
+/* Cards (symbol list)*/
+.divtable {
+    display: flex;
+    flex-direction: column;
 
-        /*border: 1px solid*/
-    }
-
-    .categorylist {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding: 1vmax 1vmax;
-    }
-    .category {
-        display: flex;
-        flex-direction: column;
-
-        background-color: #9E3039;
-    }
-    .h3bar h3 {
-        grid-column: 1/4;
-
-        margin: 2vmax;
-
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 1.9rem;
-        text-align: left;
-    }
-    .h3bar {
-        background: #51181D;
-    }
-
-    .cardzime {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        width: 20vmax;
-        max-width: 256px;
-        margin: 0.5vmax;
-        height: 25vmax;
-        max-height: 320px;
-
-        background-color: #FFFFFF;
-        border-radius: 16px;
-        box-shadow: 0px 12px 12px #7E262D;
-    }
-    .cardzime p {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 100%;
-        font-weight: bold;
-        text-align: center;
-    }
-    .cardzime img {
-        width: 100%;
-        grid-row: 2;
-        border-bottom: 1px dotted;
-    }
-
-    .cardzimeinfo {
-        display: none;
-        margin: 1vmax;
-    }
-    .cardzime:hover .cardzimetitle {
-        display: none;
-    }
-    .cardzime:hover .cardzimeinfo {
-        display: block;
-    }
-    .cardzime:hover img {
-        display: none;
-    }
-
-    /* Card list buttons (filters) */
-    .cardfilter {
-        padding: 8px;
-        margin-bottom: 8px;
-
-        text-decoration: none;
-        background-color: #75232a;
-        color: #FFFFFF;
-        border: none;
-    }
-    .cardfilter:active {
-        background-color: #51181D;
-    }
-
-    /* Navigation*/
-    nav ul {
-        list-style: none;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
-        background-color: #9E3039;
-    }
-    nav li {
-        display: inline;
-        text-align: center;
-        float: left;
-    }
-    nav a {
-        display: block;
-        
-        padding: 16px;
-
-        text-decoration: none;
-        color: white;
-        border-right: #75232a 1px solid;
-    }
-    nav li:hover {
-        background-color: #75232a;
-    }
-
-    /* Flashcard */
-    .flashcardcategory {
-        display: flex;
-        flex-direction: row;
-
-        margin: auto;
-        margin-top: 1vmax;
-    }
-    .flashcard-front {
-        display: flex;
-        align-items: center;
-
-        max-width: 360px;
-
-        margin: auto;
-
-        border-radius: 16px;
-        background-color: #FFFFFF;
-        box-shadow: 0px 12px 12px #7E262D;
-    }
-    .flashcard-front img {
-        width: 100%;
-    }
-    .flashcardbuttons {
-        display: flex;
-        flex-direction: column;
-
-        min-width: 340px;
-        max-width: 360px;
-
-        text-align: center;
-        justify-items: center;
-    }
-    .flashcardbuttons button {
-        padding: 16px;
-        margin: 12px;
-        
-        width: 100%;
-        height: 100%;
-
-        font-weight: bold;
-        text-align: center;
-        border-radius: 8px;
-        border: 2px #c5c5c5;
-        box-shadow: 0 8px 8px #7E262D;
-        
-        background-color: #FFFFFF;
-    }
-    button:active {
-        background-color: #c5c5c5;
-    }
+    /*border: 1px solid*/
 }
 
-@media screen and (max-width: 590px) {
+.categorylist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1vmax 1vmax;
+}
+.category {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #9E3039;
+}
+.h3bar h3 {
+    grid-column: 1/4;
+
+    margin: 2vmax;
+
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.9rem;
+    text-align: left;
+}
+.h3bar {
+    background: #51181D;
+}
+
+.cardzime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 20vmax;
+    max-width: 256px;
+    margin: 0.5vmax;
+    height: 25vmax;
+    max-height: 320px;
+
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0px 12px 12px #7E262D;
+}
+.cardzime p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+.cardzime img {
+    width: 100%;
+    grid-row: 2;
+    border-bottom: 1px dotted;
+}
+
+.cardzimeinfo {
+    display: none;
+    margin: 1vmax;
+}
+.cardzime:hover .cardzimetitle {
+    display: none;
+}
+.cardzime:hover .cardzimeinfo {
+    display: block;
+}
+.cardzime:hover img {
+    display: none;
+}
+
+/* Card list buttons (filters) */
+.cardfilter {
+    padding: 8px;
+    margin-bottom: 8px;
+
+    text-decoration: none;
+    background-color: #75232a;
+    color: #FFFFFF;
+    border: none;
+}
+.cardfilter:active {
+    background-color: #51181D;
+}
+
+/* Navigation*/
+nav ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #9E3039;
+}
+nav li {
+    display: inline;
+    text-align: center;
+    float: left;
+}
+nav a {
+    display: block;
+    
+    padding: 16px;
+
+    text-decoration: none;
+    color: white;
+    border-right: #75232a 1px solid;
+}
+nav li:hover {
+    background-color: #75232a;
+}
+
+/* Flashcard */
+.flashcardcategory {
+    display: flex;
+    flex-direction: row;
+
+    margin: auto;
+    margin-top: 1vmax;
+}
+.flashcard-front {
+    display: flex;
+    align-items: center;
+
+    max-width: 360px;
+
+    margin: auto;
+
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 12px #7E262D;
+}
+.flashcard-front img {
+    width: 100%;
+}
+.flashcardbuttons {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 340px;
+    max-width: 360px;
+
+    text-align: center;
+    justify-items: center;
+}
+.flashcardbuttons button {
+    padding: 16px;
+    margin: 12px;
+    
+    width: 100%;
+    height: 100%;
+
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px #c5c5c5;
+    box-shadow: 0 8px 8px #7E262D;
+    
+    background-color: #FFFFFF;
+}
+button:active {
+    background-color: #c5c5c5;
+}
+
+@media screen and (max-width: 800px) {
     .flashcardcategory {
         flex-direction: column;
     }
