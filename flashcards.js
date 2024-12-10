@@ -42,19 +42,20 @@ var SYMBOLLIST = [
 ]
 
 // macies.html -> Flashcard functionality
-let shuffledList = []
-let dynamicList = []
+let shuffledList
 let currentCard
 let currentCardIndex = 0
 let img = document.getElementsByTagName("img")[0]
 let cardFlipped = false
 let answer
 function generateSymbolList() {
-    for (list of SYMBOLLIST) {
-        shuffledList.push(list)
+    shuffledList = SYMBOLLIST
+    for (let i = SYMBOLLIST.length - 1; i > 0; i--) { // Shuffle
+        let j = Math.floor(Math.random() * (i + 1));
+        [shuffledList[i], shuffledList[j]] = [shuffledList[j], shuffledList[i]]
     }
-    dynamicList = shuffledList
-    currentCard = dynamicList[currentCardIndex]
+    console.log(shuffledList)
+    currentCard = shuffledList[currentCardIndex]
     updateCard()
 }
 function updateCard() {
@@ -63,12 +64,15 @@ function updateCard() {
 
     cardFlipped = false
     generateAnswers()
-
-    console.log(currentCard)
 }
 function nextFlashcard() {
     if (currentCardIndex < shuffledList.length-1) {
         currentCardIndex++
+    }
+    if (currentCardIndex >= shuffledList.length-1) { // Reset list
+        console.log(`${currentCardIndex}, End reached, new shuffle`)
+        generateSymbolList()
+        currentCardIndex = 0
     }
     updateCard()
 }
@@ -105,9 +109,7 @@ function generateAnswers() {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
-    randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
-    randomanswers[0] = randomanswers[randindex]
-    randomanswers[randindex] = answer
+    
 
     answerbuttons[0].innerText = randomanswers[0]
     answerbuttons[1].innerText = randomanswers[1]
