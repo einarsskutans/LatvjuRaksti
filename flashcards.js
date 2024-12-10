@@ -48,6 +48,7 @@ let currentCardIndex = 0
 let img = document.getElementsByTagName("img")[0]
 let cardFlipped = false
 let answer
+let nextFlashcardProcess = false
 function generateSymbolList() {
     shuffledList = SYMBOLLIST
     for (let i = SYMBOLLIST.length - 1; i > 0; i--) { // Shuffle
@@ -74,6 +75,7 @@ function nextFlashcard() {
         generateSymbolList()
         currentCardIndex = 0
     }
+    nextFlashcardProcess = false
     updateCard()
 }
 function previousFlashcard() {
@@ -91,12 +93,25 @@ function turnFlashcard() {
     }
 }
 
-function checkRight(buttonid) {
+async function checkRight(buttonid) {
     let button = document.getElementById(buttonid)
 
-    if (button.innerText === answer) {
-        console.log("Right answer")
-        nextFlashcard()
+    if (!nextFlashcardProcess) {
+        nextFlashcardProcess = true
+        if (button.innerText === answer) {
+            console.log("Right answer")
+            button.style.backgroundColor = "#5CE65C" // Correct green
+            await new Promise((resolve) => setTimeout(resolve, 1000))
+            button.style.backgroundColor = ""
+            nextFlashcard()
+        }
+        else if (button.innerText !== answer) {
+            console.log("Wrong answer")
+            button.style.backgroundColor = "#E65C5C" // Correct green
+            await new Promise((resolve) => setTimeout(resolve, 1500))
+            button.style.backgroundColor = ""
+            nextFlashcard()
+        }
     }
 }
 function generateAnswers() {
@@ -109,7 +124,10 @@ function generateAnswers() {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
-    
+
+    randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
+    randomanswers[0] = randomanswers[randindex]
+    randomanswers[randindex] = answer
 
     answerbuttons[0].innerText = randomanswers[0]
     answerbuttons[1].innerText = randomanswers[1]
