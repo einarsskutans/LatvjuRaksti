@@ -44,11 +44,12 @@ var SYMBOLLIST = [
 // macies.html -> Flashcard functionality
 let shuffledList
 let currentCard
-let currentCardIndex = 0
+let currentCardIndex = 35 // Set this to skip ahead
 let img = document.getElementsByTagName("img")[0]
 let cardFlipped = false
 let answer
 let nextFlashcardProcess = false
+let points = 0
 function generateSymbolList() {
     shuffledList = SYMBOLLIST
     for (let i = SYMBOLLIST.length - 1; i > 0; i--) { // Shuffle
@@ -73,7 +74,9 @@ function nextFlashcard() {
     if (currentCardIndex >= shuffledList.length-1) { // Reset list
         console.log(`${currentCardIndex}, End reached, new shuffle`)
         generateSymbolList()
+        showResults(points)
         currentCardIndex = 0
+        points = 0
     }
     nextFlashcardProcess = false
     updateCard()
@@ -99,14 +102,15 @@ async function checkRight(buttonid) {
     if (!nextFlashcardProcess) {
         nextFlashcardProcess = true
         if (button.innerText === answer) {
-            console.log("Right answer")
+            points++
+            console.log("Right answer " + points)
             button.style.backgroundColor = "#5CE65C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 1000))
+            await new Promise((resolve) => setTimeout(resolve, 0))
             button.style.backgroundColor = ""
             nextFlashcard()
         }
         else if (button.innerText !== answer) {
-            console.log("Wrong answer")
+            console.log("Wrong answer " + points)
             button.style.backgroundColor = "#E65C5C" // Correct green
             await new Promise((resolve) => setTimeout(resolve, 1500))
             button.style.backgroundColor = ""
@@ -125,14 +129,19 @@ function generateAnswers() {
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
 
-    randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
-    randomanswers[0] = randomanswers[randindex]
-    randomanswers[randindex] = answer
+    //randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
+    //randomanswers[0] = randomanswers[randindex]
+    //randomanswers[randindex] = answer
 
     answerbuttons[0].innerText = randomanswers[0]
     answerbuttons[1].innerText = randomanswers[1]
     answerbuttons[2].innerText = randomanswers[2]
     answerbuttons[3].innerText = randomanswers[3]
+}
+function showResults(points) {
+    let button = document.getElementsByClassName("flashcardbuttons")[0]
+    let flashcardfront = document.getElementsByClassName("flashcard-front")[0]
+    button.innerHTML = ""
 }
 
 document.addEventListener("DOMContentLoaded", generateSymbolList)
