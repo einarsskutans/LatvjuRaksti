@@ -67,7 +67,7 @@ function updateCard() {
     cardFlipped = false
     generateAnswers()
 }
-function nextFlashcard() {
+async function nextFlashcard() {
     if (currentCardIndex < shuffledList.length-1) {
         currentCardIndex++
     }
@@ -112,7 +112,7 @@ async function checkRight(buttonid) {
         else if (button.innerText !== answer) {
             console.log("Wrong answer " + points)
             button.style.backgroundColor = "#E65C5C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 1500))
+            await new Promise((resolve) => setTimeout(resolve, 0))
             button.style.backgroundColor = ""
             nextFlashcard()
         }
@@ -138,10 +138,38 @@ function generateAnswers() {
     answerbuttons[2].innerText = randomanswers[2]
     answerbuttons[3].innerText = randomanswers[3]
 }
-function showResults(points) {
-    let button = document.getElementsByClassName("flashcardbuttons")[0]
-    let flashcardfront = document.getElementsByClassName("flashcard-front")[0]
-    button.innerHTML = ""
+
+async function showResults(points) {
+    console.log(`Result ${points} points`)
+    buttonlist = document.getElementsByClassName("flashcard-buttons")[0]
+    img = document.getElementsByTagName("img")[0]
+    results = document.getElementsByClassName("flashcard-results")[0]
+    buttonlist.style.display = "none"
+    img.style.display = "none"
+    results.style.display = "flex"
+    
+    results_p = document.getElementsByClassName("results-p")[0]
+    results_p.innerText = `Pareizi atbildēti: ${points} (${Math.round(100*points/39)}%)`
+
+    let i = 1000
+    if (i == 1000) {
+        results_progress = document.getElementsByClassName("results-progress")[0]
+        let interval = setInterval(progress, 10)
+        function progress() {
+            if (i <= 0) {
+                clearInterval(interval)
+            } else {
+                i--
+                results_progress.setAttribute("value", i)
+            }
+        }
+    }
+    await new Promise((resolve) => setTimeout(resolve, 10200))
+    
+
+    buttonlist.style.display = "flex"
+    img.style.display = "flex"
+    results.style.display = "none"
 }
 
 document.addEventListener("DOMContentLoaded", generateSymbolList)

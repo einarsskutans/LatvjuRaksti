@@ -93,7 +93,7 @@ function generateSymbols() {
             categorylist.innerHTML = symbolListHTML[2]
             break
         case 3:
-            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Citas z 3,īmes</h3></div><div class="categorylist"></div></section>'
+            divtable.innerHTML += '<section class="category"><div class="h3bar"><h3>Citas zīmes</h3></div><div class="categorylist"></div></section>'
             categorylist = document.getElementsByClassName("categorylist")[0]
             categorylist.innerHTML = symbolListHTML[3]
             break
