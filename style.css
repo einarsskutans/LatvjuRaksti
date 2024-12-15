@@ -169,6 +169,7 @@ nav li:hover {
     border: 2px #c5c5c5;
     box-shadow: 0 8px 8px #7E262D;
     
+    color: #000000;
     background-color: #FFFFFF;
 }
 button:hover {
