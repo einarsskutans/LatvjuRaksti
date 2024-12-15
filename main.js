@@ -51,11 +51,11 @@ function intializeSymbolsHTML() {
     initializeSymbols()
     for (let i = 0; i < 4; i++) { // Turn each category into an HTML string
         for (list of symbolCategoryList[i]) {
-            symbolListHTML[i] += `<div class="cardzime"><img src="LatvjuZimesAssets/${list[4]}"><p class="cardzimetitle">${list[0]}</p><p class="cardzimeinfo">${list[3]}</p></div>`
+            symbolListHTML[i] += `<div class="card"><img src="LatvjuZimesAssets/${list[4]}"><p class="card-title">${list[0]}</p><p class="card-info">${list[3]}</p></div>`
         }
     }
     for (list of SYMBOLLIST) { // Turn all symbols into an HTML string
-        symbolListHTML[4] += `<div class="cardzime"><img src="LatvjuZimesAssets/${list[4]}"><p class="cardzimetitle">${list[0]}</p><p class="cardzimeinfo">${list[3]}</p></div>`
+        symbolListHTML[4] += `<div class="card"><img src="LatvjuZimesAssets/${list[4]}"><p class="card-title">${list[0]}</p><p class="card-info">${list[3]}</p></div>`
     }
     generateSymbols()
 }

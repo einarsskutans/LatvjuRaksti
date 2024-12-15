@@ -40,7 +40,7 @@ html {
     background: #51181D;
 }
 
-.cardzime {
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,31 +58,31 @@ html {
     border-radius: 16px;
     box-shadow: 0px 12px 12px #7E262D;
 }
-.cardzime p {
+.card p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     text-align: center;
 }
-.cardzime img {
+.card img {
     width: 100%;
 }
 
-.cardzimeinfo {
+.card-info {
     display: none;
     margin: 1vmax;
 }
-.cardzime:hover .cardzimetitle {
+.card:hover .card-title {
     display: none;
 }
-.cardzime:hover .cardzimeinfo {
+.card:hover .card-info {
     display: block;
 }
-.cardzime:hover img {
+.card:hover img {
     display: none;
 }
 
 /* Card list buttons (filters) */
-.cardfilter {
+.card-filter {
     padding: 8px;
     margin-bottom: 8px;
 
@@ -91,7 +91,7 @@ html {
     color: #FFFFFF;
     border: none;
 }
-.cardfilter:active {
+.card-filter:active {
     background-color: #51181D;
 }
 
@@ -233,10 +233,10 @@ button:active {
     nav a {
         border-bottom: #75232a 1px solid;
     }
-    .cardzime img {
+    .card img {
         width: 90%;
     }
-    .cardzime p {
+    .card p {
         font-size: 0.9rem;
     }
 }
