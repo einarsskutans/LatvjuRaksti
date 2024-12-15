@@ -105,14 +105,14 @@ async function checkRight(buttonid) {
             points++
             console.log("Right answer " + points)
             button.style.backgroundColor = "#5CE65C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 0))
+            await new Promise((resolve) => setTimeout(resolve, 850))
             button.style.backgroundColor = ""
             nextFlashcard()
         }
         else if (button.innerText !== answer) {
             console.log("Wrong answer " + points)
             button.style.backgroundColor = "#E65C5C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 0))
+            await new Promise((resolve) => setTimeout(resolve, 850))
             button.style.backgroundColor = ""
             nextFlashcard()
         }
@@ -129,9 +129,9 @@ function generateAnswers() {
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
 
-    //randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
-    //randomanswers[0] = randomanswers[randindex]
-    //randomanswers[randindex] = answer
+    randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
+    randomanswers[0] = randomanswers[randindex]
+    randomanswers[randindex] = answer
 
     answerbuttons[0].innerText = randomanswers[0]
     answerbuttons[1].innerText = randomanswers[1]
