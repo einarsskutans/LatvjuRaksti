@@ -142,7 +142,8 @@ nav li:hover {
     box-shadow: 0px 12px 12px #7E262D;
 }
 .flashcard img {
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 .flashcard-buttons {
     display: flex;
