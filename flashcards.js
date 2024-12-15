@@ -159,12 +159,14 @@ async function showResults(points) {
             if (i <= 0) {
                 clearInterval(interval)
             } else {
-                i--
+                i -= 2
                 results_progress.setAttribute("value", i)
             }
         }
+        while (i > 0) {
+            await new Promise((resolve) => setTimeout(resolve, 10))
+        }
     }
-    await new Promise((resolve) => setTimeout(resolve, 10200))
     
 
     buttonlist.style.display = "flex"
