@@ -251,9 +251,12 @@ button:active {
     .flashcard-category {
         flex-direction: column;
     }
+    .flashcard {
+        margin-bottom: 12px;
+    }
     .flashcard-buttons button {
         margin: 0;
-        margin-top: 12px;
+        margin-top: 8px;
     }
 
     nav ul {
