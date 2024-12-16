@@ -44,7 +44,7 @@ var SYMBOLLIST = [
 // macies.html -> Flashcard functionality
 let shuffledList
 let currentCard
-let currentCardIndex = 0 // Set this to skip ahead
+let currentCardIndex = 35 // Set this to skip ahead
 let img = document.getElementsByTagName("img")[0]
 let cardFlipped = false
 let answer
@@ -53,7 +53,7 @@ let points = 0
 function generateSymbolList() {
     shuffledList = SYMBOLLIST
     for (let i = SYMBOLLIST.length - 1; i > 0; i--) { // Shuffle
-        let j = Math.floor(Math.random() * (i + 1));
+        let j = Math.floor(Math.random() * (i+1));
         [shuffledList[i], shuffledList[j]] = [shuffledList[j], shuffledList[i]]
     }
     console.log(shuffledList)
@@ -63,6 +63,9 @@ function generateSymbolList() {
 function updateCard() {
     currentCard = shuffledList[currentCardIndex]
     img.setAttribute("src", "LatvjuZimesAssets/" + currentCard[4])
+
+    let flashcard_progress = document.getElementsByClassName("flashcard-progress")[0]
+    flashcard_progress.setAttribute("value", currentCardIndex)
 
     cardFlipped = false
     generateAnswers()
@@ -143,9 +146,11 @@ async function showResults(points) {
     console.log(`Result ${points} points`)
     buttonlist = document.getElementsByClassName("flashcard-buttons")[0]
     img = document.getElementsByTagName("img")[0]
+    flashcard = document.getElementsByClassName("flashcard")[0]
     results = document.getElementsByClassName("flashcard-results")[0]
     buttonlist.style.display = "none"
     img.style.display = "none"
+    flashcard.style.display = "none"
     results.style.display = "flex"
     
     results_p = document.getElementsByClassName("results-p")[0]
@@ -171,6 +176,7 @@ async function showResults(points) {
 
     buttonlist.style.display = "flex"
     img.style.display = "flex"
+    flashcard.style.display = "block"
     results.style.display = "none"
 }
 

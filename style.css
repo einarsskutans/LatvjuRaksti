@@ -134,12 +134,14 @@ nav li:hover {
     display: flex;
     align-items: center;
 
+    position: relative;
+
     width: 360px;
     height: 360px;
 
     margin: auto;
 
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0;
     background-color: #FFFFFF;
     box-shadow: 0px 12px 12px #7E262D;
 }
@@ -179,6 +181,30 @@ button:hover {
 }
 button:active {
     background-color: #c5c5c5;
+}
+
+.flashcard-progress[value] {
+    width: 100%;
+    height: 8px;
+
+    position: absolute;
+    bottom: 0;
+
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.flashcard-progress[value]::-webkit-progress-bar {
+    background-color: #FFFFFF;
+}
+.flashcard-progress[value]::-webkit-progress-value {
+    background-color: #51181D;
+}
+.flashcard-progress[value]::-moz-progress-bar {
+    background-color: #FFFFFF;
+}
+.flashcard-progress[value]::-moz-progress-bar {
+    background-color: #51181D;
 }
 
 .flashcard-results {
