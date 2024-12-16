@@ -44,7 +44,7 @@ var SYMBOLLIST = [
 // macies.html -> Flashcard functionality
 let shuffledList
 let currentCard
-let currentCardIndex = 35 // Set this to skip ahead
+let currentCardIndex = 0 // Set this to skip ahead
 let img = document.getElementsByTagName("img")[0]
 let answer
 let nextFlashcardProcess = false
