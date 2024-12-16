@@ -46,7 +46,6 @@ let shuffledList
 let currentCard
 let currentCardIndex = 35 // Set this to skip ahead
 let img = document.getElementsByTagName("img")[0]
-let cardFlipped = false
 let answer
 let nextFlashcardProcess = false
 let points = 0
@@ -67,7 +66,6 @@ function updateCard() {
     let flashcard_progress = document.getElementsByClassName("flashcard-progress")[0]
     flashcard_progress.setAttribute("value", currentCardIndex)
 
-    cardFlipped = false
     generateAnswers()
 }
 async function nextFlashcard() {
@@ -88,15 +86,6 @@ function previousFlashcard() {
     }
     updateCard()
 }
-function turnFlashcard() {
-    if (!cardFlipped) {
-        cardFlipped = true
-    }
-    else if (cardFlipped) {
-        cardFlipped = false
-    }
-}
-
 async function checkRight(buttonid) {
     let button = document.getElementById(buttonid)
 
