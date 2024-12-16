@@ -134,7 +134,8 @@ nav li:hover {
     display: flex;
     align-items: center;
 
-    max-width: 360px;
+    width: 360px;
+    height: 360px;
 
     margin: auto;
 
