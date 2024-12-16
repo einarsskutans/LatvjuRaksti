@@ -71,15 +71,13 @@ function updateCard() {
     generateAnswers()
 }
 async function nextFlashcard() {
-    if (currentCardIndex < shuffledList.length-1) {
-        currentCardIndex++
-    }
-    if (currentCardIndex >= shuffledList.length-1) { // Reset list
+    currentCardIndex++
+    if (currentCardIndex > shuffledList.length - 1) { // Reset list
         console.log(`${currentCardIndex}, End reached, new shuffle`)
+        currentCardIndex = 0
         generateSymbolList()
         showResults(points)
-        currentCardIndex = 0
-        points = 0
+        points = 0 // Always after showResults()
     }
     nextFlashcardProcess = false
     updateCard()
@@ -154,7 +152,7 @@ async function showResults(points) {
     results.style.display = "flex"
     
     results_p = document.getElementsByClassName("results-p")[0]
-    results_p.innerText = `Pareizi atbildēti: ${points} (${Math.round(100*points/39)}%)`
+    results_p.innerText = `Pareizi atbildēti: ${points} (${Math.round(100*points/40)}%)`
 
     let i = 1000
     if (i == 1000) {
