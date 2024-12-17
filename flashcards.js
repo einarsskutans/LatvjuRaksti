@@ -44,7 +44,7 @@ var SYMBOLLIST = [
 // macies.html -> Flashcard functionality
 let shuffledList
 let currentCard
-let currentCardIndex = 0 // Set this to skip ahead
+let currentCardIndex = 37 // Set this to skip ahead
 let img = document.getElementsByTagName("img")[0]
 let answer
 let nextFlashcardProcess = false
@@ -88,6 +88,7 @@ function previousFlashcard() {
 }
 async function checkRight(buttonid) {
     let button = document.getElementById(buttonid)
+    let buttonAll = document.getElementsByClassName("answerbuttons")
 
     if (!nextFlashcardProcess) {
         nextFlashcardProcess = true
@@ -95,15 +96,25 @@ async function checkRight(buttonid) {
             points++
             console.log("Right answer " + points)
             button.style.backgroundColor = "#5CE65C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 850))
-            button.style.backgroundColor = ""
+            await new Promise((resolve) => setTimeout(resolve, 900))
+            for (button_i of buttonAll) { // Resets all button colors
+                button_i.style.backgroundColor = ""
+            }
             nextFlashcard()
         }
         else if (button.innerText !== answer) {
             console.log("Wrong answer " + points)
-            button.style.backgroundColor = "#E65C5C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 850))
-            button.style.backgroundColor = ""
+            button.style.backgroundColor = "#E65C5C" // Correct red
+            for (i of buttonAll) { // Check other answers
+                if (i.innerText === answer) {
+                    i.style.backgroundColor = "#5CE65C" // Correct green
+                }
+            }
+
+            await new Promise((resolve) => setTimeout(resolve, 900))
+            for (button_i of buttonAll) { // Resets all button colors
+                button_i.style.backgroundColor = ""
+            }
             nextFlashcard()
         }
     }
@@ -151,13 +162,14 @@ async function showResults(points) {
             if (i <= 0) {
                 clearInterval(interval)
             } else {
-                i -= 2
+                i -= 1
                 results_progress.setAttribute("value", i)
             }
         }
         while (i > 0) {
             await new Promise((resolve) => setTimeout(resolve, 10))
         }
+        i = 0
     }
     
 
