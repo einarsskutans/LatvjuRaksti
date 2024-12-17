@@ -96,7 +96,7 @@ async function checkRight(buttonid) {
             points++
             console.log("Right answer " + points)
             button.style.backgroundColor = "#5CE65C" // Correct green
-            await new Promise((resolve) => setTimeout(resolve, 1000))
+            await new Promise((resolve) => setTimeout(resolve, 1400))
             for (button_i of buttonAll) { // Resets all button colors
                 button_i.style.backgroundColor = ""
             }
@@ -111,7 +111,7 @@ async function checkRight(buttonid) {
                 }
             }
 
-            await new Promise((resolve) => setTimeout(resolve, 1000))
+            await new Promise((resolve) => setTimeout(resolve, 1400))
             for (button_i of buttonAll) { // Resets all button colors
                 button_i.style.backgroundColor = ""
             }
