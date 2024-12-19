@@ -128,6 +128,9 @@ function generateAnswers() {
     for (let i = 0; i < 3; i++) {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
+        if (randomanswers[i] === answer) {
+            randomanswers[i] = "Kāpnes"
+        }
     }
 
     randindex = Math.floor(Math.random() * randomanswers.length) // Imitate shuffling ->
