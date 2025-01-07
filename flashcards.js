@@ -128,8 +128,16 @@ function generateAnswers() {
     for (let i = 0; i < 3; i++) {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
-        if (randomanswers[i] === answer) {
-            randomanswers[i] = "Kāpnes"
+    }
+    for (k of randomanswers) {
+        let j = 0
+        for (i of randomanswers) {
+            if (k === i) {
+                j++
+            }
+        }
+        if (j > 1) {
+            k = "duplicate"
         }
     }
 
