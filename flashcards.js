@@ -129,7 +129,7 @@ function generateAnswers() {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
         randomanswers.push(SYMBOLLIST[randindex][0])
     }
-    for (k of randomanswers) {
+    for (k of randomanswers) { // Fixing duplicates NOT DONE
         let j = 0
         for (i of randomanswers) {
             if (k === i) {
