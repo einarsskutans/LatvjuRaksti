@@ -119,6 +119,7 @@ async function checkRight(buttonid) {
         }
     }
 }
+
 function generateAnswers() {
     answer = currentCard[0]
     let answerbuttons = document.getElementsByClassName("answerbuttons")
@@ -127,17 +128,16 @@ function generateAnswers() {
     randomanswers.push(answer) // Right answer always goes first
     for (let i = 0; i < 3; i++) {
         randindex = Math.floor(Math.random() * SYMBOLLIST.length)
-        randomanswers.push(SYMBOLLIST[randindex][0])
+        randanswer = SYMBOLLIST[randindex][0]
+        randomanswers.push(randanswer)
     }
-    for (k of randomanswers) { // Fixing duplicates NOT DONE
-        let j = 0
-        for (i of randomanswers) {
-            if (k === i) {
-                j++
+    for (let i = 0; i < 4; i++) { // Check for duplicates, might impact performance
+        for (let j = 0; j < 4; j++) {
+            while ( (randomanswers[i] === randomanswers[j]) && (i !== j) ) {
+                randindex = Math.floor(Math.random() * SYMBOLLIST.length)
+                randanswer = SYMBOLLIST[randindex][0]
+                randomanswers[j] = randanswer
             }
-        }
-        if (j > 1) {
-            k = "duplicate"
         }
     }
 
