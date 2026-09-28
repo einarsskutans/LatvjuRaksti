@@ -69,11 +69,15 @@ html {
     display: none;
     margin: 1vmax;
 }
+.card-info sup {
+    font-size: xx-small;
+}
 .card:hover .card-title {
     display: none;
 }
 .card:hover .card-info {
     display: block;
+    text-align: left;
 }
 .card:hover img {
     display: none;
